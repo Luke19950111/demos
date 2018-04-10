@@ -7,4 +7,4 @@ function getClass(node,classes){
         node.classList.remove(key)
       }
     }
-  }
+}
