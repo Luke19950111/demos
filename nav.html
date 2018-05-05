@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>nav-demo</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        nav {
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            margin-top: 30px;
+        }
+
+        ol {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        ol>li {
+            list-style: none;
+            float: left;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        ol>li:first-child {
+            margin-left: 0;
+        }
+
+        .navbar {
+            height: 5px;
+            background: #ddd;
+            margin-top: 5px;
+
+        }
+
+        .navbar>.innerbar {
+            height: 100%;
+            background: black;
+            transition: all .3s;
+        }
+
+        .navbar.state-1>.innerbar {
+            width: 40px;
+            margin-left: 0;
+        }
+
+        .navbar.state-2>.innerbar {
+            width: 60px;
+            margin-left: 46px;
+        }
+
+        .navbar.state-3>.innerbar {
+            width: 40px;
+            margin-left: 121px;
+        }
+    </style>
+    <nav>
+        <ol class="nav clearfix">
+            <li id="first">first</li>
+            <li id="second">second</li>
+            <li id="third">third</li>
+        </ol>
+        <div class="navbar state-1" id="navbar">
+            <div class="innerbar"></div>
+        </div>
+    </nav>
+    <script>
+        first.onclick = function () {
+            navbar.className = 'navbar state-1'
+        }
+        second.onclick = function () {
+            navbar.className = 'navbar state-2'
+        }
+        third.onclick = function () {
+            navbar.className = 'navbar state-3'
+        }
+    </script>
+</body>
+
+</html>
