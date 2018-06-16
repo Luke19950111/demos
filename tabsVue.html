@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://cdn.bootcss.com/axios/0.17.1/axios.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+  <title>JS Bin</title>
+<style id="jsbin-css">
+  ol{
+    list-style: none;
+  }
+  .active{
+    background: red;
+  }
+</style>
+</head>
+<body>
+  <div id="app">
+    
+  </div>
+<script id="jsbin-javascript">
+let view = new Vue({
+  el: '#app',
+  data: {
+    selected: 'a',
+    tabs: [
+      {name:'a', content: 'aaa'},
+      {name:'b', content: 'bbb'},
+      {name:'c', content: 'ccc'}
+    ]
+  },
+  template: `
+    <div>
+      <ol>
+        <li v-for="tab in tabs"
+          v-on:click="selected=tab.name"
+          v-bind:class="{active:selected===tab.name}"
+        >{{tab.name}}</li>
+       
+      </ol>
+      <ol>
+        <li v-for="tab in tabs"
+          v-show="tab.name===selected"
+        >{{tab.content}}</li>
+      </ol>
+      
+    </div>
+`
+})
+</script>
+</body>
+</html>
