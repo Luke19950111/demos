@@ -7,21 +7,30 @@
     <title>转圈效果</title>
     <style>
         .wrapper{
+            /* 152 = span1 120 + padding 10*2 + border 6*2 */
+            width: 152px;
+            height: 152px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .content{
             position: relative;
         }
-        .wrapper span{
+        .content span{
             position: absolute;
             padding: 10px;
             border:6px solid #1abc9c;
             border-top:8px solid transparent;
             border-radius: 999px;
         }
-        .wrapper span:nth-child(1){
+        .content span:nth-child(1){
             width:120px;
             height: 120px;
             animation: spin-1 4s infinite linear;
         }
-        .wrapper span:nth-child(2){
+        .content span:nth-child(2){
             top:20px;
             left:20px;
             width:80px;
@@ -42,8 +51,10 @@
 </head>
 <body>
     <div class="wrapper">
-        <span></span>
-        <span></span>
+        <div class="content">
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </body>
 </html>
