@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DragDiv</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .reminder{
+            position: absolute;
+            bottom: 20%;
+            left: 20%;
+            color: #dddddd;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="reminder">Double click for code</div>
+    <script>
+        var dragMe = document.createElement('h1')
+        dragMe.style.position = 'absolute'
+        dragMe.style.cursor = 'move'
+        dragMe.style.top = '0'
+        dragMe.style.left  = '0'
+        dragMe.innerText = 'DragMe'
+        document.body.appendChild(dragMe)
+
+        var x = false
+        var position
+
+        dragMe.onmousedown = (e)=>{
+            x = true
+            position = [e.clientX, e.clientY]
+        }
+        document.onmousemove = (e)=>{
+            if(x){
+                let deltaX = e.clientX - position[0]
+                let deltaY = e.clientY - position[1]
+                let top = parseInt(dragMe.style.top) || 0
+                let left = parseInt(dragMe.style.left) || 0
+                dragMe.style.top = top + deltaY + 'px'
+                dragMe.style.left = left + deltaX + 'px'
+                position = [e.clientX, e.clientY]
+            }
+        }
+        document.onmouseup = ()=>{
+            x = false
+        }
+
+        document.ondblclick = ()=>{window.open('https://github.com/Luke19950111/demos/blob/master/dragMe.html')}
+    </script>
+</body>
+</html>
