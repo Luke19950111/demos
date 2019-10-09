@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>shinyBorder</title>
+    <style>
+        body{
+            background: black;
+        }
+        .wrapper{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 150px;
+            height: 150px;
+        }
+        .content{
+            width: 100%;
+            height: 100%;
+            background: rgba(8,52,106,.3);
+        }
+        .top{
+            width: 100%;
+            height: 50px;
+        }
+        .left{
+            transform:rotate(90deg);
+            -ms-transform:rotate(90deg); 	/* IE 9 */
+            -moz-transform:rotate(90deg); 	/* Firefox */
+            -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+            -o-transform:rotate(90deg);
+            width: 50px;
+            position: absolute;
+            right: 124px;
+            opacity: 0;
+            animation: c 3s  linear infinite alternate;
+        }
+        .right{
+            transform:rotate(90deg);
+            -ms-transform:rotate(90deg); 	/* IE 9 */
+            -moz-transform:rotate(90deg); 	/* Firefox */
+            -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+            -o-transform:rotate(90deg);
+            width: 50px;
+            position: absolute;
+            right: -24px;
+            opacity: 0;
+            animation: d 3s linear infinite alternate;
+        }
+        @keyframes c {
+          0% {
+            top:calc(100% - 40px);
+            opacity: 1;
+          }
+          100% {
+            top:10px;
+            opacity: 1;
+          }
+        }
+        @keyframes d {
+          0% {
+            top: 10px;
+            opacity: 1;
+          }
+          100% {
+            top:calc(100% - 40px);
+            opacity: 1;
+          }
+        }
+        .circle{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -40px;
+        }
+        .rotation{
+            width: 60%;
+            height: 60%;
+            -webkit-transform: rotate(360deg);
+            animation: rotation 8s linear infinite;
+            -moz-animation: rotation 8s linear infinite;
+            -webkit-animation: rotation 8s linear infinite;
+            -o-animation: rotation 8s linear infinite;
+        }
+        @-webkit-keyframes rotation{
+          from {-webkit-transform: rotate(0deg);}
+          to {-webkit-transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <img src="./img/sucai1.png" class="top">
+            <img src="./img/sucai5.png" class="left">
+            <img src="./img/sucai5.png" class="right">
+            <div class="circle">
+                <img src="./img/sucai4.png" class="rotation">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.onclick = ()=>{window.open('https://github.com/Luke19950111/demos/blob/master/shinyBorder.html')}
+    </script>
+</body>
+</html>
