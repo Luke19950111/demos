@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>light</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        .wrapper{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .wrapper a {
+            position: relative;
+            overflow: hidden
+        }
+
+        .wrapper a:before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 160px;
+            margin-top: 0px;
+            margin-left: -120px;
+            overflow: hidden;
+            z-index: 6;
+            background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            -webkit-transform: skewX(-25deg);
+            -moz-transform: skewX(-25deg);
+            -o-transform: skewX(-25deg);
+        }
+
+        .wrapper:hover a:before {
+            animation: light-anti .4s ease-out forwards;
+        }
+
+        @keyframes light-anti {
+            0% {
+                margin-left: -20px
+            }
+            100% {
+                margin-left: 240px
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="">
+            <img src='https://i.loli.net/2019/10/23/AGhzCkJZgipPdEF.jpg' alt='' width="200px" />
+        </a>
+    </div>
+    <script>
+        document.onclick = ()=>{window.open('https://github.com/Luke19950111/demos/blob/master/lightOnImg.html')}
+    </script>
+</body>
+</html>
