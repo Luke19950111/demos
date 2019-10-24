@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>imgHover</title>
+    <style>
+        .wrapper{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            text-align: center;
+        }
+        .wrapper .img-text {
+            width: 200px;
+            overflow: hidden;
+            cursor: pointer;
+            font-size: 0;
+            position: relative;
+        }
+        .wrapper img {
+            transition: all .5s;
+        }
+        .wrapper .img-text .text {
+            font-size: 14px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            opacity: 0;
+            transition: all .5s;
+        }
+        .wrapper .img-text .text a {
+            display: block;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+        .wrapper .img-text .text a:hover {
+            background-color: #9d9da5;
+            border-color: #9d9da5
+        }
+        .wrapper:hover img {
+            transform: scale(1.1);
+            opacity: .8;
+        }
+        .wrapper:hover .text {
+            opacity: 1;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="img-text">
+            <img src='https://i.loli.net/2019/10/23/AGhzCkJZgipPdEF.jpg' alt='' width="200px" />
+            <div class="text">
+                <a href="#">查看视频</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.onclick = ()=>{window.open('https://github.com/Luke19950111/demos/blob/master/imgHoverOne.html')}
+    </script>
+</body>
+</html>
