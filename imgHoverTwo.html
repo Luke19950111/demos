@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>imgHover</title>
+    <style>
+        *, *:before, *:after{
+            box-sizing: border-box;
+        }
+        .wrapper{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .wrapper .img-text{
+            position: relative;
+        }
+        .wrapper .img-text:before,
+		.wrapper .img-text:after {
+			position: absolute;
+			top: 10%;
+			left: 10%;
+			content: '';
+			width: 80%;
+			height: 80%;
+			transform: scale(1, 1);
+		}
+        .wrapper .img-text:before {
+			border-top: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+			opacity: 0;
+			transform: scale(0, 1);
+			transition: all .5s;
+		}
+		
+		.wrapper .img-text:after {
+			border-left: 1px solid #fff;
+			border-right: 1px solid #fff;
+			opacity: 0;
+			transform: scale(1, 0);
+			transition: all .5s;
+		}
+        .wrapper .img-text .text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: #fff;
+			text-align: left;
+		}
+        .wrapper .img-text .text h4 {
+			font-weight: bold;
+            margin-bottom: 0;
+			padding-bottom: 5px;
+			transform: translate3d(0, 0, 0);
+			transition: all .5s;
+            font-size: 16px;
+		}
+		
+		.wrapper .img-text .text p {
+			opacity: 0;
+			transform: translate3d(0, 10px, 0);
+			transition: all .5s;
+            font-size: 14px;
+		}
+        .wrapper:hover .img-text:before {
+			opacity: 1;
+			transform: scale(1, 1);
+		}
+		
+		.wrapper:hover .img-text:after {
+			opacity: 1;
+			transform: scale(1, 1);
+		}
+		
+		.wrapper:hover .img-text .text h4 {
+			transform: translate3d(0, 5px, 0);
+		}
+		
+		.wrapper:hover .img-text .text p {
+			opacity: 1;
+			transform: translate3d(0, -10px, 0);
+		}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+		<div class="img-text">
+			<img src='https://i.loli.net/2019/10/24/oCjkY9IQF7npNmJ.jpg' alt='' width="200px" />
+			<div class="text">
+				<h4>这是标题</h4>
+				<p>内容放在此处。</p>
+			</div>
+		</div>
+    </div>
+    <script>
+        document.onclick = ()=>{window.open('https://github.com/Luke19950111/demos/blob/master/imgHoverTwo.html')}
+    </script>
+</body>
+</html>
