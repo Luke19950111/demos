@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>imgHover</title>
+    <style>
+        .wrapper{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .wrapper .img-text {
+			position: relative;
+			overflow: hidden;
+			width: 200px;
+			transition: all .5s;
+		}
+        .wrapper .img-text h4{
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .wrapper .img-text .text {
+			margin-left: 10px;
+			text-align: left;
+			color: #fff;
+            padding: 10px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+        .wrapper .img-text .text .content {
+            font-size: 14px;
+            margin: 0;
+		}
+        .wrapper .img-text .text p {
+            margin: 3px 0;
+			transform: translate3d(-220px, 0, 0);
+			opacity: 0;
+			transition: all 0.35s;
+		}
+        .wrapper .img-text img {
+			transform: scale(1);
+			transition: all .35s;
+		}
+        .wrapper:hover .img-text img {
+			transform: scale(1.1);
+            opacity: .8;
+		}
+        .wrapper:hover .img-text .text p {
+			padding: 0 5px;
+			margin-bottom: 2px;
+			opacity: 1;
+			transform: translate3d(0, 0, 0)
+		}
+        .wrapper:hover .img-text .text p:first-child {
+			transition-delay: 0;
+		}
+		
+		.wrapper:hover .img-text .text p:nth-of-type(2) {
+			transition-delay: .13s;
+		}
+		
+		.wrapper:hover .img-text .text p:nth-of-type(3) {
+			transition-delay: .25s;
+		}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+		<div class="img-text">
+			<img src='https://i.loli.net/2019/10/24/oCjkY9IQF7npNmJ.jpg' alt='' width="200px" />
+			<div class="text">
+				<h4>标题标题</h4>
+				<div class="content">
+					<p>内容内容内容</p>
+					<p>内容内容内容</p>
+					<p>内容内容内容</p>
+				</div>
+			</div>
+		</div>
+		</a>
+    </div>
+    <script>
+        document.onclick = ()=>{window.open('https://github.com/Luke19950111/demos/blob/master/imgHoverThree.html')}
+    </script>
+</body>
+</html>
